@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ContactService } from '../../core/services/contact.service';
+import * as emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -22,16 +22,27 @@ export class ContactComponent {
   errorMessage = '';
   loading = false;
 
-  constructor(private contactService: ContactService) {}
-
   onSubmit(): void {
     this.successMessage = '';
     this.errorMessage = '';
     this.loading = true;
 
-    this.contactService.sendMessage(this.form).subscribe({
-      next: () => {
-        this.successMessage = 'Your message has been sent successfully. You will also receive a confirmation email.';
+    const templateParams = {
+      from_name: this.form.name,
+      from_email: this.form.email,
+      subject: this.form.subject,
+      message: this.form.message
+    };
+
+    emailjs
+      .send(
+        'service_y0xpuma',
+        'template_0ifgwnb',
+        templateParams,
+        'qk82AFUdICTf7VkAb'
+      )
+      .then(() => {
+        this.successMessage = 'Your message has been sent successfully.';
         this.form = {
           name: '',
           email: '',
@@ -39,11 +50,11 @@ export class ContactComponent {
           message: ''
         };
         this.loading = false;
-      },
-      error: () => {
+      })
+      .catch((error: unknown) => {
+        console.error('EmailJS error:', error);
         this.errorMessage = 'An error occurred while sending your message.';
         this.loading = false;
-      }
-    });
+      });
   }
 }
