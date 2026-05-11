@@ -88,10 +88,10 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/your-username/business-web-app',
       demoUrl: '#',
       demoImages: [
-        'assets/images/projects/SmartDoc AI/login.png',
-        'assets/images/projects/SmartDoc AI/register.png',
-        'assets/images/projects/SmartDoc AI/dashboard.png',
-        'assets/images/projects/SmartDoc AI/clients.png'
+        'assets/images/projects/SalonVision AI/login.png',
+        'assets/images/projects/SalonVision AI/register.png',
+        'assets/images/projects/SalonVision AI/dashboard.png',
+        'assets/images/projects/SalonVision AI/clients.png'
       ]
     }
   ];
