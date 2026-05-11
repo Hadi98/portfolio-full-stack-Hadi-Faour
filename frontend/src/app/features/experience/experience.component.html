@@ -1,0 +1,38 @@
+<section class="premium-page">
+  <div class="container">
+    <div class="page-header reveal-veil delay-a">
+      <span class="section-badge orbit-anchor">Experience</span>
+      <h1 class="line-grow">Experiences oriented towards concrete</h1>
+      <p>
+        I have worked on topics ranging from full stack development to workflow automation, with a real closeness to business needs.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-row reveal-veil"
+               *ngFor="let exp of experiences; let i = index"
+               [ngClass]="{
+                 'delay-a': i === 0,
+                 'delay-b': i === 1,
+                 'delay-c': i === 2,
+                 'delay-d': i === 3
+               }">
+        <div class="timeline-dot"></div>
+
+        <div class="glass-card timeline-card magnetic-card">
+          <div class="timeline-top">
+            <div>
+              <h2>{{ exp.role }}</h2>
+              <h3>{{ exp.company }}</h3>
+            </div>
+            <span class="period">{{ exp.period }}</span>
+          </div>
+
+          <ul>
+            <li class="parallax-soft" *ngFor="let point of exp.points">{{ point }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

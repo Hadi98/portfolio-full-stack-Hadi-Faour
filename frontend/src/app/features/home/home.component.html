@@ -1,0 +1,181 @@
+<section class="hero">
+  <div class="hero-bg">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-left">
+      <div class="hero-badge fade-up">Full Stack Portfolio</div>
+
+      <h1 class="fade-up delay-1">Hi, I'm <span>Hadi Faour</span></h1>
+
+      <h2 class="fade-up delay-2 typing-line">
+        {{ typedTitle }}<span class="cursor">|</span>
+      </h2>
+
+      <p class="hero-description fade-up delay-3 typing-description">
+        {{ typedDescription }}
+      </p>
+
+      <div class="hero-tags hero-reveal" [class.visible]="showHeroTags">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Angular</span>
+        <span>REST API</span>
+        <span>MySQL</span>
+        <span>JWT</span>
+      </div>
+
+      <div class="hero-info hero-reveal" [class.visible]="showHeroInfo">
+        <span>Montpellier, France</span>
+        <span>+33 (0)7 49 00 31 79</span>
+        <span>faourhadi0@gmail.com</span>
+      </div>
+
+      <div class="hero-actions hero-reveal" [class.visible]="showHeroActions">
+        <a routerLink="/projects" class="btn btn-primary">View my projects</a>
+        <a routerLink="/contact" class="btn btn-outline">Contact me</a>
+      </div>
+    </div>
+
+    <div class="hero-right fade-in delay-4">
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="profile-avatar">HF</div>
+
+          <div>
+            <h3>Full Stack Engineer</h3>
+            <p>Java / Angular / Enterprise Apps</p>
+          </div>
+        </div>
+
+        <div class="profile-metrics">
+          <div class="metric">
+            <strong>3</strong>
+            <span>Projects Full Stack</span>
+          </div>
+
+          <div class="metric">
+            <strong>12</strong>
+            <span>Key technologies</span>
+          </div>
+
+          <div class="metric">
+            <strong>100%</strong>
+            <span>Focus on business applications</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini-card mini-card-1">
+        <span class="dot green"></span>
+        API Integration
+      </div>
+
+      <div class="mini-card mini-card-2">
+        <span class="dot blue"></span>
+        Workflow Automation
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section container">
+  <div #revealElement class="stat-card reveal-card">
+    <h3>Java / Angular</h3>
+    <p>Main stack for modern business applications.</p>
+  </div>
+
+  <div #revealElement class="stat-card reveal-card">
+    <h3>APIs & Integration</h3>
+    <p>Experience in integrating services, APIs, and enterprise tools.</p>
+  </div>
+
+  <div #revealElement class="stat-card reveal-card">
+    <h3>Clean architecture</h3>
+    <p>Structure-oriented approach, maintainability and clear separation of responsibilities.</p>
+  </div>
+</section>
+
+<section class="skills-preview container">
+  <div #revealElement class="section-head reveal-card">
+    <h2>Main Skills</h2>
+    <p>Main skills used in my full stack projects.</p>
+  </div>
+
+  <div class="skills-grid">
+    <span #revealElement class="skill-pill reveal-card">Java</span>
+    <span #revealElement class="skill-pill reveal-card">Spring Boot</span>
+    <span #revealElement class="skill-pill reveal-card">Angular</span>
+    <span #revealElement class="skill-pill reveal-card">TypeScript</span>
+    <span #revealElement class="skill-pill reveal-card">JavaScript</span>
+    <span #revealElement class="skill-pill reveal-card">REST API</span>
+    <span #revealElement class="skill-pill reveal-card">MySQL</span>
+    <span #revealElement class="skill-pill reveal-card">JWT</span>
+    <span #revealElement class="skill-pill reveal-card">HTML</span>
+    <span #revealElement class="skill-pill reveal-card">CSS</span>
+    <span #revealElement class="skill-pill reveal-card">Git</span>
+    <span #revealElement class="skill-pill reveal-card">M-Files VAF</span>
+  </div>
+</section>
+
+<section class="projects-preview container">
+  <div #revealElement class="section-head reveal-card">
+    <h2>Featured Projects</h2>
+    <p>Some projects that show my full stack and product-oriented approach.</p>
+  </div>
+
+  <div class="projects-grid">
+    <article #revealElement class="project-card reveal-card">
+      <div class="project-header">
+        <span class="project-badge">Angular • Spring Boot • MySQL</span>
+      </div>
+      <h3>Task Management System</h3>
+      <p>
+        Full stack application with authentication, Kanban/List/Calendar dashboard, JWT, task management by user, and MySQL database.
+      </p>
+      <a routerLink="/projects" class="project-link">Voir plus</a>
+    </article>
+
+    <article #revealElement class="project-card reveal-card">
+      <div class="project-header">
+        <span class="project-badge">AI • Angular • Spring Boot</span>
+      </div>
+      <h3>SalonVision AI</h3>
+      <p>
+        AI-powered hairstyle preview platform for barbers and hair salons. It allows
+    users to upload a client photo, generate haircut recommendations based on face
+    shape analysis, or apply a reference hairstyle image to create a realistic preview.
+      </p>
+      <a routerLink="/projects" class="project-link">View more</a>
+    </article>
+
+    <article #revealElement class="project-card reveal-card">
+      <div class="project-header">
+        <span class="project-badge">AI • GED • Document Management</span>
+      </div>
+      <h3>SmartDoc AI</h3>
+      <p>
+        Intelligent document management system that allows users to upload, classify,
+    summarize, and search business documents using artificial intelligence, with
+    automatic metadata extraction and document-based question answering.
+      </p>
+      <a routerLink="/projects" class="project-link">View more</a>
+    </article>
+  </div>
+</section>
+
+<section class="cta-section container">
+  <div #revealElement class="cta-card reveal-card">
+    <h2>Do you want to see more details about my projects?</h2>
+    <p>
+      I can contribute on Java / Angular applications, business tools, dashboards, and API integrations.
+    </p>
+    <div class="cta-actions">
+      <a routerLink="/projects" class="btn btn-primary">Explore my projects</a>
+      <a routerLink="/contact" class="btn btn-outline">Let's discuss together</a>
+    </div>
+  </div>
+</section>

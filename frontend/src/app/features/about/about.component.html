@@ -1,0 +1,71 @@
+<section class="premium-page">
+  <div class="container">
+    <div class="page-header reveal-veil delay-a">
+      <span class="section-badge orbit-anchor">About</span>
+      <h1 class="line-grow">A business-oriented full stack profile</h1>
+      <p>
+        I position myself as a full stack Java / Angular developer capable of building modern, reliable, and useful applications in professional contexts.
+      </p>
+    </div>
+
+    <div class="about-layout">
+      <div class="glass-card main-story reveal-veil delay-b magnetic-card">
+        <h2>Who I am</h2>
+        <p>
+          I am a full stack Java / Angular developer focused on building useful,
+  reliable and maintainable business applications.
+        </p>
+        <p>
+          My approach is pragmatic: understand the business need, design a clean
+  solution and deliver a maintainable application on both frontend and backend.
+        </p>
+
+        <div class="highlight-list">
+          <div class="highlight-row parallax-soft" *ngFor="let item of highlights">
+            <span class="bullet"></span>
+            <span>{{ item }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card side-profile reveal-veil delay-c magnetic-card orbit-anchor">
+        <div class="avatar-box">HF</div>
+        <h3>Hadi Faour</h3>
+        <p class="role">Full Stack Java / Angular Developer</p>
+
+        <div class="profile-meta">
+          <div class="meta-card parallax-soft">
+            <span class="meta-label">Location</span>
+            <strong>Montpellier, France</strong>
+          </div>
+          <div class="meta-card parallax-soft">
+            <span class="meta-label">Focus</span>
+            <strong>Business Apps</strong>
+          </div>
+          <div class="meta-card parallax-soft">
+            <span class="meta-label">Goal</span>
+            <strong>Build useful products</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="values-section">
+      <h2 class="line-grow reveal-veil delay-a">How I work</h2>
+
+      <div class="values-grid">
+        <article class="glass-card value-card reveal-veil magnetic-card"
+                 *ngFor="let value of values; let i = index"
+                 [ngClass]="{
+                   'delay-a': i === 0,
+                   'delay-b': i === 1,
+                   'delay-c': i === 2,
+                   'delay-d': i === 3
+                 }">
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

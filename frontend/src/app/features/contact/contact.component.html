@@ -1,0 +1,74 @@
+<section class="premium-page">
+  <div class="container">
+    <div class="page-header reveal-veil delay-a">
+      <span class="section-badge orbit-anchor">Contact</span>
+      <h1 class="line-grow">Let's discuss your project</h1>
+      <p>
+       If you are looking for a Java / Angular developer for a business application, a dashboard, or an API integration, I would be happy to talk with you.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="glass-card contact-info reveal-veil delay-b magnetic-card">
+        <h2>Informations</h2>
+
+        <div class="info-box parallax-soft">
+          <span class="label">Email</span>
+          <strong>faourhadi0@gmail.com</strong>
+        </div>
+
+        <div class="info-box parallax-soft">
+          <span class="label">phone</span>
+          <strong>+33 (0)7 49 00 31 79</strong>
+        </div>
+
+        <div class="info-box parallax-soft">
+          <span class="label">Localization</span>
+          <strong>Montpellier, France</strong>
+        </div>
+
+        <div class="info-box parallax-soft">
+          <span class="label">LinkedIn</span>
+          <strong>linkedin.com/in/hadi-faour</strong>
+        </div>
+      </div>
+
+      <div class="glass-card contact-form-card reveal-veil delay-c magnetic-card orbit-anchor">
+        <h2>Send a message</h2>
+
+        <div *ngIf="successMessage" class="success-box">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="error-box">
+  {{ errorMessage }}
+</div>
+
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" [(ngModel)]="form.name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" [(ngModel)]="form.email" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" [(ngModel)]="form.subject" name="subject" required />
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="6" [(ngModel)]="form.message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

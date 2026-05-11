@@ -1,0 +1,260 @@
+:host {
+  display: block;
+}
+
+.premium-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 13, 0.96), rgba(5, 7, 13, 0.86));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.premium-navbar.scrolled {
+  background:
+    linear-gradient(180deg, rgba(5, 7, 13, 0.98), rgba(5, 7, 13, 0.9));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.nav-shell {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: white;
+  flex-shrink: 0;
+  min-width: max-content;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 18px;
+  color: #f8fafc;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-links a,
+.download-cv-btn {
+  position: relative;
+  text-decoration: none;
+  color: #cbd5e1;
+  padding: 10px 14px;
+  border-radius: 14px;
+  transition: all 0.28s ease;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.download-cv-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-links a::after,
+.download-cv-btn::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.download-cv-btn:hover::after {
+  transform: scaleX(1);
+}
+
+.download-cv-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-cta {
+  margin-left: 8px;
+  border: none;
+  border-radius: 14px;
+  padding: 11px 18px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.28);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.35);
+}
+
+.nav-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.nav-glow-left {
+  top: -90px;
+  left: 8%;
+  background: #60a5fa;
+}
+
+.nav-glow-right {
+  top: -100px;
+  right: 8%;
+  background: #2563eb;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 5px auto;
+  border-radius: 999px;
+}
+
+@media (max-width: 1280px) {
+  .nav-shell {
+    padding: 16px 20px;
+  }
+
+  .nav-links a,
+  .download-cv-btn {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .brand-text {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    border-radius: 20px;
+    background: rgba(7, 10, 18, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: all 0.28s ease;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a,
+  .download-cv-btn,
+  .nav-cta {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-cta {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-shell {
+    padding: 14px 14px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text {
+    font-size: 16px;
+  }
+}

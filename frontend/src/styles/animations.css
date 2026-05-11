@@ -1,0 +1,110 @@
+.reveal-veil {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  animation: revealVeil 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-veil::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04), transparent);
+  transform: translateX(-120%);
+  animation: sweepVeil 1.1s ease forwards;
+  pointer-events: none;
+}
+
+.delay-a { animation-delay: 0.08s; }
+.delay-b { animation-delay: 0.18s; }
+.delay-c { animation-delay: 0.28s; }
+.delay-d { animation-delay: 0.38s; }
+
+.magnetic-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.magnetic-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.32);
+  border-color: rgba(96, 165, 250, 0.35);
+}
+
+.line-grow {
+  position: relative;
+}
+
+.line-grow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: growLine 0.8s ease forwards;
+  animation-delay: 0.25s;
+}
+
+.orbit-anchor {
+  position: relative;
+}
+
+.orbit-anchor::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #60a5fa;
+  top: -6px;
+  right: -6px;
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.7);
+  animation: orbitFloat 3.8s ease-in-out infinite;
+}
+
+.parallax-soft {
+  transition: transform 0.35s ease;
+}
+
+.parallax-soft:hover {
+  transform: translateY(-4px) translateX(2px);
+}
+
+@keyframes revealVeil {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sweepVeil {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes growLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes orbitFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(6px, -4px) scale(1.06);
+  }
+  50% {
+    transform: translate(0, -8px) scale(1);
+  }
+  75% {
+    transform: translate(-5px, -3px) scale(0.96);
+  }
+}

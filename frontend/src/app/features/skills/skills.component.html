@@ -1,0 +1,28 @@
+<section class="premium-page">
+  <div class="container">
+    <div class="page-header reveal-veil delay-a">
+      <span class="section-badge orbit-anchor">Skills</span>
+      <h1 class="line-grow">A coherent stack for serious applications</h1>
+      <p>
+        My skills are organized around modern full-stack development, service integration, and the building of business tools.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      <article class="glass-card skill-card reveal-veil magnetic-card"
+               *ngFor="let group of skillGroups; let i = index"
+              >
+        <div class="skill-head">
+  <span class="skill-icon"><i [class]="group.icon"></i></span>
+  <h2>{{ group.title }}</h2>
+</div>
+
+        <div class="skill-tags">
+          <span class="skill-tag parallax-soft" *ngFor="let item of group.items">
+            {{ item }}
+          </span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<nav class="premium-navbar" [class.scrolled]="isScrolled">
+  <div class="nav-shell">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand-mark">HF</span>
+      <span class="brand-text">Hadi Faour</span>
+    </a>
+
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" [class.open]="isMenuOpen">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </a>
+
+      <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">
+        <i class="fa-solid fa-code"></i>
+        <span>Skills</span>
+      </a>
+
+      <a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">
+        <i class="fa-solid fa-briefcase"></i>
+        <span>Experience</span>
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Projects</span>
+      </a>
+
+<a routerLink="/certifications" routerLinkActive="active" (click)="closeMenu()">
+  <i class="fa-solid fa-certificate"></i>
+  <span>Certifications</span>
+</a>
+
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+
+      <a href="assets/CV-Hadi faour full stack.pdf" download class="download-cv-btn" (click)="closeMenu()">
+        <i class="fa-solid fa-download"></i>
+        <span>Download CV</span>
+      </a>
+
+      <button class="nav-cta" (click)="goToContact()">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Let’s Talk</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-glow nav-glow-left"></div>
+  <div class="nav-glow nav-glow-right"></div>
+</nav>

@@ -1,0 +1,156 @@
+<section class="projects-page premium-page">
+  <div class="container">
+    <div class="page-hero reveal-veil delay-a">
+      <span class="section-badge orbit-anchor">Projects</span>
+      <h1 class="line-grow">My projects</h1>
+      <p>
+        A selection of projects that showcase my ability to design full-stack applications, business solutions, and modern interfaces with an approach focused on architecture and product value.
+      </p>
+    </div>
+
+    <section class="featured-project reveal-veil delay-b" *ngIf="featuredProject as project">
+      <div class="featured-content magnetic-card">
+        <div class="featured-left">
+          <span class="featured-label orbit-anchor">Featured Project</span>
+          <h2>{{ project.title }}</h2>
+          <p class="featured-category">{{ project.category }}</p>
+
+          <p class="featured-description">
+            {{ project.description }}
+          </p>
+
+          <div class="stack-list">
+            <span class="stack-badge parallax-soft" *ngFor="let tech of project.stack">
+              {{ tech }}
+            </span>
+          </div>
+
+          <div class="highlights">
+            <div class="highlight-item parallax-soft" *ngFor="let item of project.highlights">
+              <span class="highlight-dot"></span>
+              <span>{{ item }}</span>
+            </div>
+          </div>
+
+          <div class="project-actions">
+            <a [href]="project.githubUrl" target="_blank" class="project-btn primary">GitHub</a>
+            <button type="button" class="project-btn secondary" (click)="openDemo(project)">
+  View Demo
+</button>
+          </div>
+        </div>
+
+        <div class="featured-right">
+          <div class="mockup-card orbit-anchor">
+            <div class="mockup-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="mockup-body">
+              <div class="mockup-sidebar"></div>
+              <div class="mockup-content">
+                <div class="mockup-line big"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line short"></div>
+
+                <div class="mockup-grid">
+                  <div class="mockup-box"></div>
+                  <div class="mockup-box"></div>
+                  <div class="mockup-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-list-section">
+      <div class="section-header reveal-veil delay-a">
+        <h2 class="line-grow">Other projects</h2>
+        <p>
+          Other achievements that strengthen my full stack profile and my experience with web applications and business tools.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal-veil magnetic-card"
+                 *ngFor="let project of secondaryProjects; let i = index"
+                 [ngClass]="{
+                   'delay-a': i === 0,
+                   'delay-b': i === 1,
+                   'delay-c': i === 2
+                 }">
+          <div class="project-top">
+            <span class="project-category">{{ project.category }}</span>
+          </div>
+
+          <h3>{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="stack-list small">
+            <span class="stack-badge parallax-soft" *ngFor="let tech of project.stack">
+              {{ tech }}
+            </span>
+          </div>
+
+          <div class="mini-highlights">
+            <span class="parallax-soft" *ngFor="let item of project.highlights">
+              {{ item }}
+            </span>
+          </div>
+
+          <div class="project-actions">
+            <a [href]="project.githubUrl" target="_blank" class="project-btn primary">GitHub</a>
+            <button type="button" class="project-btn secondary" (click)="openDemo(project)">
+  View Demo
+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <div class="demo-modal-backdrop" *ngIf="selectedProject" (click)="closeDemo()">
+  <div class="demo-modal" (click)="$event.stopPropagation()">
+    <button type="button" class="demo-close-btn" (click)="closeDemo()">
+      ×
+    </button>
+
+    <div class="demo-modal-header">
+      <span class="section-badge">Project Demo</span>
+      <h2>{{ selectedProject.title }}</h2>
+      <p>{{ selectedProject.description }}</p>
+    </div>
+
+    <div class="demo-image-wrapper">
+      <button type="button" class="demo-nav-btn left" (click)="previousImage()">
+        ‹
+      </button>
+
+      <img
+        [src]="selectedProject.demoImages[selectedImageIndex]"
+        [alt]="selectedProject.title + ' demo image'"
+        class="demo-main-image"
+      />
+
+      <button type="button" class="demo-nav-btn right" (click)="nextImage()">
+        ›
+      </button>
+    </div>
+
+    <div class="demo-thumbnails">
+      <button
+        type="button"
+        class="demo-thumbnail"
+        *ngFor="let image of selectedProject.demoImages; let i = index"
+        [class.active]="i === selectedImageIndex"
+        (click)="selectImage(i)"
+      >
+        <img [src]="image" [alt]="selectedProject.title + ' thumbnail ' + (i + 1)" />
+      </button>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
