@@ -62,9 +62,12 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/your-username/workflow-automation',
       demoUrl: '#',
       demoImages: [
-        'assets/images/projects/workflow/workflow-1.png',
-        'assets/images/projects/workflow/workflow-2.png',
-        'assets/images/projects/workflow/workflow-3.png'
+        'assets/images/projects/SmartDoc AI/smartdoc_01_documents_list.png',
+        'assets/images/projects/SmartDoc AI/smartdoc_02_ai_document_analysis.png',
+        'assets/images/projects/SmartDoc AI/smartdoc_03_chat_with_document.png',
+        'assets/images/projects/SmartDoc AI/smartdoc_04_smart_search.png',
+        'assets/images/projects/SmartDoc AI/smartdoc_05_workflow_management.png',
+        'assets/images/projects/SmartDoc AI/smartdoc_05_workflow_management.png'
       ]
     },
     {
@@ -85,10 +88,10 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/your-username/business-web-app',
       demoUrl: '#',
       demoImages: [
-        'assets/images/projects/workflow/login.png',
-        'assets/images/projects/workflow/register.png',
-        'assets/images/projects/workflow/dashboard.png',
-        'assets/images/projects/workflow/clients.png'
+        'assets/images/projects/SmartDoc AI/login.png',
+        'assets/images/projects/SmartDoc AI/register.png',
+        'assets/images/projects/SmartDoc AI/dashboard.png',
+        'assets/images/projects/SmartDoc AI/clients.png'
       ]
     }
   ];
