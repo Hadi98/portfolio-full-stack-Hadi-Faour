@@ -85,9 +85,10 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/your-username/business-web-app',
       demoUrl: '#',
       demoImages: [
-        'assets/images/projects/workflow/workflow-1.png',
-        'assets/images/projects/workflow/workflow-2.png',
-        'assets/images/projects/workflow/workflow-3.png'
+        'assets/images/projects/workflow/login.png',
+        'assets/images/projects/workflow/register.png',
+        'assets/images/projects/workflow/dashboard.png',
+        'assets/images/projects/workflow/clients.png'
       ]
     }
   ];
