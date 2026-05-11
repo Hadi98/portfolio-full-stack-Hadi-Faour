@@ -38,9 +38,9 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/your-username/task-management-system',
       demoUrl: '#',
       demoImages: [
-        'assets/images/projects/task-management/task-1.png',
-        'assets/images/projects/task-management/task-2.png',
-        'assets/images/projects/task-management/task-3.png'
+        'assets/images/projects/task-management/tasks-page-for-admin.png',
+        'assets/images/projects/task-management/dashbord-page.png',
+        'assets/images/projects/task-management/notification.png'
       ],
       featured: true
     },
